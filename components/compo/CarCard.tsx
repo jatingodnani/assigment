@@ -2,10 +2,11 @@ import React from 'react'
 import { Card } from '../ui/card'
 import { BookmarkPlus, Car, Fuel, GaugeCircle, MoveUpRight } from 'lucide-react'
 import { Button } from '../ui/button'
+import { cn } from '@/lib/utils'
 
-function CarCard({car}:{car:any}) {
+function CarCard({car,className}:{car:any,className?:string}) {
   return (
-    <Card key={car.id} className="overflow-hidden text-white bg-[#050B20]">
+    <Card key={car.id} className={cn(`overflow-hidden text-white bg-[#050B20],${className}`)}>
     <div className="relative">
       <img
         src={car.image}
@@ -23,7 +24,7 @@ function CarCard({car}:{car:any}) {
     </div>
     <div className="p-4">
       <h3 className="font-bold mb-1">{car.name}</h3>
-      <p className="text-sm text-gray-500 mb-4">{car.model}</p>
+      <p className="text-sm text-gray-500 mb-4 truncate">{car.model}</p>
       <div className="grid grid-cols-3 gap-4 mb-4">
         <div className="flex flex-col items-center text-center">
           <GaugeCircle className="h-5 w-5 text-gray-400 mb-1" />
@@ -40,10 +41,10 @@ function CarCard({car}:{car:any}) {
       </div>
       <div className="flex items-center justify-between">
         <div>
-          <span className="text-xs text-gray-500">$289</span>
+          <span className="text-xs text-gray-500 line-through">$289</span>
           <p className="text-lg font-bold">${car.price}</p>
         </div>
-        <Button  className=" bg-transparent text-sm flex items-center gap-2">
+        <Button  className=" bg-transparent text-sm flex items-center gap-2 text-blue-500">
          
           View Details
           <MoveUpRight className="h-4 w-4" />

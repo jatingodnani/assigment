@@ -56,7 +56,7 @@ const companyLinks = [
       <footer className="bg-white px-8">
         <div className="max-w-[var(--content-width)] mx-auto border-t border-border" />
         <div className="max-w-[var(--content-width)] mx-auto py-12 text-black">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 justify-around">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-5 justify-around">
             {/* Company Section */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Company</h3>
