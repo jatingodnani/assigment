@@ -14,8 +14,8 @@ import { Input } from "../ui/input";
 interface FilterState {
   location: string;
   radius: string;
-  condition: string[];
-  type: string[];
+  condition: Array<string>;
+  type: Array<string>;
   make: string;
   model: string;
   yearFrom: string;
@@ -23,8 +23,8 @@ interface FilterState {
   mileage: string;
   driveType: string;
   priceRange: number[];
-  transmission: string[];
-  fuelType: string[];
+  transmission: Array<string>;
+  fuelType: Array<string>;
   exteriorColor: string;
   interiorColor: string;
 }
@@ -57,12 +57,7 @@ export function FilterSheet() {
   };
 
   const handleCheckboxChange = (key: keyof FilterState, value: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: prev[key].includes(value)
-        ? prev[key].filter((item: string) => item !== value)
-        : [...prev[key], value],
-    }));
+   return;
   };
 
   const clearFilters = () => {
